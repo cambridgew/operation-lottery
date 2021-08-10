@@ -1,15 +1,14 @@
 package org.indiv.cambridgew.lottery.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 import org.indiv.cambridgew.lottery.common.BaseEntity;
 
 import java.time.LocalDateTime;
 
 /**
  * 资格
+ * 相同活动下同一资格类型的资格仅可唯一存在
  *
  * @author cambridge.w
  * @since 2021/8/4
@@ -18,13 +17,16 @@ import java.time.LocalDateTime;
 @TableName(value = "tb_qualification")
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Qualification extends BaseEntity implements Comparable<Qualification> {
 
     // 活动Id
     private Integer actId;
 
-    // 资格名称
-    private String name;
+    // 资格事件
+    private String eventKey;
 
     // 资格开始时间
     private LocalDateTime startTime;
