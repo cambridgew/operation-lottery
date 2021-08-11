@@ -43,16 +43,6 @@ public class Activity extends BaseEntity {
     private LocalDateTime endTime;
 
     /**
-     * 资格开始时间(多数时候同活动开始时间)
-     */
-    private LocalDateTime qualificationStartTime;
-
-    /**
-     * 资格结束时间
-     */
-    private LocalDateTime qualificationEndTime;
-
-    /**
      * 抽奖开始时间
      */
     private LocalDateTime drawStartTime;

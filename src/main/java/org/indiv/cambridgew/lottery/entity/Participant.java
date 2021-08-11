@@ -6,7 +6,7 @@ import org.indiv.cambridgew.lottery.common.BaseEntity;
 
 /**
  * 活动参与者(设计上实际为qualification和用户的关联关系表, 由于用户信息无需做冗余记录, 故合并为同一张表)
- * 同一用户获取相同的资格合并在同一条记录中
+ * 同一用户获取相同的资格(同一资格Id, 不区分来源source)合并在同一条记录中
  *
  * @author cambridge.w
  * @since 2021/8/9
@@ -31,9 +31,6 @@ public class Participant extends BaseEntity {
 
     // 当前资格总抽奖次数
     private Integer totalChanceNumber;
-
-    // 资格来源
-    private String source;
 
     // 活动Id-冗余
     private Integer actId;

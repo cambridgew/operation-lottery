@@ -1,4 +1,4 @@
-package org.indiv.cambridgew.dto;
+package org.indiv.cambridgew.lottery.dto;
 
 import com.alibaba.fastjson.JSONObject;
 import lombok.Data;

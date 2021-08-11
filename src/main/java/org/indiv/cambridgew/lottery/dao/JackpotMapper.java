@@ -1,4 +1,4 @@
-package org.indiv.cambridgew.lottery.mapper;
+package org.indiv.cambridgew.lottery.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;

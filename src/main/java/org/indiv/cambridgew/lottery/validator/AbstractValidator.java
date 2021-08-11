@@ -1,12 +1,13 @@
 package org.indiv.cambridgew.lottery.validator;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import org.indiv.cambridgew.lottery.common.RecordQualificationOperationEnum;
+import org.indiv.cambridgew.lottery.dao.ParticipantMapper;
+import org.indiv.cambridgew.lottery.dao.QualificationMapper;
+import org.indiv.cambridgew.lottery.dao.RecordQualificationMapper;
 import org.indiv.cambridgew.lottery.entity.Participant;
 import org.indiv.cambridgew.lottery.entity.Qualification;
 import org.indiv.cambridgew.lottery.entity.RecordQualification;
-import org.indiv.cambridgew.lottery.mapper.ParticipantMapper;
-import org.indiv.cambridgew.lottery.mapper.QualificationMapper;
-import org.indiv.cambridgew.lottery.mapper.RecordQualificationMapper;
 
 import javax.annotation.Resource;
 import java.time.LocalDateTime;
@@ -74,38 +75,56 @@ public abstract class AbstractValidator implements QualificationValidator.Valida
         LocalDateTime now = LocalDateTime.now();
 
         // 校验单人每日资格获取上限
-        LambdaQueryWrapper<RecordQualification> singleDailyLimitQuery = new LambdaQueryWrapper<>();
-        singleDailyLimitQuery.eq(RecordQualification::getActId, qualification.getActId())
-                .eq(RecordQualification::getQualificationId, qualification.getId())
-                .eq(RecordQualification::getUserId, userId)
-                .ge(RecordQualification::getCreateTime, LocalDateTime.of(now.toLocalDate(), LocalTime.MIN))
-                .le(RecordQualification::getCreateTime, LocalDateTime.of(now.toLocalDate(), LocalTime.MAX));
-        Integer singleDailyCount = recordQualificationMapper.selectCount(singleDailyLimitQuery);
-        isTrue(singleDailyCount < qualification.getSingleDailyLimit(), OUT_OF_SINGLE_DAILY_QUALIFICATION_LIMIT);
+        Optional.ofNullable(qualification.getSingleDailyLimit())
+                .ifPresent(singleDailyLimit -> {
+                    LambdaQueryWrapper<RecordQualification> singleDailyLimitQuery = new LambdaQueryWrapper<>();
+                    singleDailyLimitQuery.eq(RecordQualification::getActId, qualification.getActId())
+                            .eq(RecordQualification::getQualificationId, qualification.getId())
+                            .eq(RecordQualification::getUserId, userId)
+                            .eq(RecordQualification::getOperation, RecordQualificationOperationEnum.QUALIFY)
+                            .ge(RecordQualification::getCreateTime, LocalDateTime.of(now.toLocalDate(), LocalTime.MIN))
+                            .le(RecordQualification::getCreateTime, LocalDateTime.of(now.toLocalDate(), LocalTime.MAX));
+                    Integer singleDailyCount = recordQualificationMapper.selectCount(singleDailyLimitQuery);
+                    isTrue(singleDailyCount < singleDailyLimit, OUT_OF_SINGLE_DAILY_QUALIFICATION_LIMIT);
+                });
 
         // 校验单人累计资格获取上限
-        LambdaQueryWrapper<RecordQualification> singleLimitQuery = new LambdaQueryWrapper<>();
-        singleLimitQuery.eq(RecordQualification::getActId, qualification.getActId())
-                .eq(RecordQualification::getQualificationId, qualification.getId())
-                .eq(RecordQualification::getUserId, userId);
-        Integer singleCount = recordQualificationMapper.selectCount(singleLimitQuery);
-        isTrue(singleCount < qualification.getSingleLimit(), OUT_OF_SINGLE_QUALIFICATION_LIMIT);
+        Optional.ofNullable(qualification.getSingleLimit())
+                .ifPresent(singleLimit -> {
+                    LambdaQueryWrapper<RecordQualification> singleLimitQuery = new LambdaQueryWrapper<>();
+                    singleLimitQuery.eq(RecordQualification::getActId, qualification.getActId())
+                            .eq(RecordQualification::getQualificationId, qualification.getId())
+                            .eq(RecordQualification::getUserId, userId)
+                            .eq(RecordQualification::getOperation, RecordQualificationOperationEnum.QUALIFY);
+                    Integer singleCount = recordQualificationMapper.selectCount(singleLimitQuery);
+                    isTrue(singleCount < singleLimit, OUT_OF_SINGLE_QUALIFICATION_LIMIT);
+
+                });
 
         // 校验活动每日资格获取上限
-        LambdaQueryWrapper<RecordQualification> totalDailyLimitQuery = new LambdaQueryWrapper<>();
-        totalDailyLimitQuery.eq(RecordQualification::getActId, qualification.getActId())
-                .eq(RecordQualification::getQualificationId, qualification.getId())
-                .ge(RecordQualification::getCreateTime, LocalDateTime.of(now.toLocalDate(), LocalTime.MIN))
-                .le(RecordQualification::getCreateTime, LocalDateTime.of(now.toLocalDate(), LocalTime.MAX));
-        Integer totalDailyCount = recordQualificationMapper.selectCount(totalDailyLimitQuery);
-        isTrue(totalDailyCount < qualification.getTotalDailyLimit(), OUT_OF_DAILY_QUALIFICATION_LIMIT);
+        Optional.ofNullable(qualification.getTotalDailyLimit())
+                .ifPresent(totalDailyLimit -> {
+                    LambdaQueryWrapper<RecordQualification> totalDailyLimitQuery = new LambdaQueryWrapper<>();
+                    totalDailyLimitQuery.eq(RecordQualification::getActId, qualification.getActId())
+                            .eq(RecordQualification::getQualificationId, qualification.getId())
+                            .eq(RecordQualification::getOperation, RecordQualificationOperationEnum.QUALIFY)
+                            .ge(RecordQualification::getCreateTime, LocalDateTime.of(now.toLocalDate(), LocalTime.MIN))
+                            .le(RecordQualification::getCreateTime, LocalDateTime.of(now.toLocalDate(), LocalTime.MAX));
+                    Integer totalDailyCount = recordQualificationMapper.selectCount(totalDailyLimitQuery);
+                    isTrue(totalDailyCount < totalDailyLimit, OUT_OF_DAILY_QUALIFICATION_LIMIT);
+
+                });
 
         // 校验活动累计资格获取上限
-        LambdaQueryWrapper<RecordQualification> totalLimitQuery = new LambdaQueryWrapper<>();
-        totalLimitQuery.eq(RecordQualification::getActId, qualification.getActId())
-                .eq(RecordQualification::getQualificationId, qualification.getId());
-        Integer totalCount = recordQualificationMapper.selectCount(totalLimitQuery);
-        isTrue(totalCount < qualification.getTotalLimit(), OUT_OF_QUALIFICATION_LIMIT);
+        Optional.ofNullable(qualification.getTotalLimit())
+                .ifPresent(totalLimit -> {
+                    LambdaQueryWrapper<RecordQualification> totalLimitQuery = new LambdaQueryWrapper<>();
+                    totalLimitQuery.eq(RecordQualification::getActId, qualification.getActId())
+                            .eq(RecordQualification::getQualificationId, qualification.getId())
+                            .eq(RecordQualification::getOperation, RecordQualificationOperationEnum.QUALIFY);
+                    Integer totalCount = recordQualificationMapper.selectCount(totalLimitQuery);
+                    isTrue(totalCount < totalLimit, OUT_OF_QUALIFICATION_LIMIT);
+                });
     }
 
     /**

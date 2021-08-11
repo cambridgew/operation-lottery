@@ -6,8 +6,8 @@ import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import org.indiv.cambridgew.lottery.entity.Activity;
 import org.indiv.cambridgew.lottery.entity.Jackpot;
-import org.indiv.cambridgew.lottery.mapper.ActivityMapper;
-import org.indiv.cambridgew.lottery.mapper.JackpotMapper;
+import org.indiv.cambridgew.lottery.dao.ActivityMapper;
+import org.indiv.cambridgew.lottery.dao.JackpotMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

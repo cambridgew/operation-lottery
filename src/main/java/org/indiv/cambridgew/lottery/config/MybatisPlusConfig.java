@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 2021/8/4
  */
 @Configuration
-@MapperScan({"org.indiv.cambridgew.lottery.mapper"})
+@MapperScan({"org.indiv.cambridgew.lottery.dao"})
 public class MybatisPlusConfig {
 
     @Bean
