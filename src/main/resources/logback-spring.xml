@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+
+    <define name="appId" class="org.indiv.cambridgew.poseidon.core.log.AppIdDefiner"/>
+
+    <springProperty scope="context" name="springAppName" source="spring.application.name"/>
+
+    <springProperty scope="context" name="logSwitch" source="port.http.server"/>
+
+    <!-- log maxFileSize -->
+    <springProperty scope="context" name="MAX_FILE_SIZE" source="spring.logback.max-file-size" defaultValue="100MB"/>
+
+    <!-- log maxIndex -->
+    <springProperty scope="context" name="MAX_INDEX" source="spring.logback.max-index" defaultValue="5"/>
+
+    <conversionRule conversionWord="hostAddress"
+                    converterClass="org.indiv.cambridgew.poseidon.core.log.HostAddressConvert"/>
+
+    <!-- log base path -->
+    <property name="LOG_HOME" value="/opt/logs/${appId}/applog"/>
+
+    <!--STDOUT输出格式-->
+    <property name="STDOUT_PATTERN"
+              value='%d{yyyy-MM-dd HH:mm:ss.SSS}|%X{X-CAT-ROOT-ID:-}|%X{X-CAT-PARENT-ID:-}|%X{X-CAT-ID:-}|${springAppName:-}|%magenta(%thread)|%green(%-5level)|%cyan(%logger{50}) - %msg%n'/>
+
+    <!--INFO输出格式-->
+    <property name="INFO_PATTERN" value='{
+                        "host": "%hostAddress",
+                        "time": "%d{yyyy-MM-dd HH:mm:ss.SSSZ}",
+                        "catRootId": "%X{X-CAT-ROOT-ID:-}",
+                        "catParentId": "%X{X-CAT-PARENT-ID:-}",
+                        "catId": "%X{X-CAT-ID:-}",
+                        "service": "${springAppName:-}",
+
+                        "appId": "%X{n-d-service-app-id}",
+                        "serviceId" : "%X{n-d-service-id}",
+                        "serviceVersion" : "%X{n-d-service-version}",
+                        "serviceRegion" : "%X{n-d-service-region}",
+                        "serviceEnv" : "%X{n-d-service-env}",
+                        "swTraceId": "%X{trace-id}",
+
+                        "level": "%level",
+                        "class": "%logger",
+                        "message": "%message%n%exception{10}"
+                        }'/>
+
+    <!--WARN输出格式-->
+    <property name="WARN_PATTERN" value='{
+                        "host": "%hostAddress",
+                        "time": "%d{yyyy-MM-dd HH:mm:ss.SSSZ}",
+                        "catRootId": "%X{X-CAT-ROOT-ID:-}",
+                        "catParentId": "%X{X-CAT-PARENT-ID:-}",
+                        "catId": "%X{X-CAT-ID:-}",
+                        "service": "${springAppName:-}",
+
+                        "appId": "%X{n-d-service-app-id}",
+                        "serviceId" : "%X{n-d-service-id}",
+                        "serviceVersion" : "%X{n-d-service-version}",
+                        "serviceRegion" : "%X{n-d-service-region}",
+                        "serviceEnv" : "%X{n-d-service-env}",
+                        "swTraceId": "%X{trace-id}",
+
+                        "level": "%level",
+                        "class": "%logger",
+                        "message": "%message%n%exception{10}"
+                        }'/>
+
+    <!--ERROR输出格式-->
+    <property name="ERROR_PATTERN" value='{
+                        "host": "%hostAddress",
+                        "time": "%d{yyyy-MM-dd HH:mm:ss.SSSZ}",
+                        "catRootId": "%X{X-CAT-ROOT-ID:-}",
+                        "catParentId": "%X{X-CAT-PARENT-ID:-}",
+                        "catId": "%X{X-CAT-ID:-}",
+                        "service": "${springAppName:-}",
+
+                        "appId": "%X{n-d-service-app-id}",
+                        "serviceId" : "%X{n-d-service-id}",
+                        "serviceVersion" : "%X{n-d-service-version}",
+                        "serviceRegion" : "%X{n-d-service-region}",
+                        "serviceEnv" : "%X{n-d-service-env}",
+                        "swTraceId": "%X{trace-id}",
+
+                        "level": "%level",
+                        "class": "%logger",
+                        "message": "%message%n%exception{10}"
+                        }'/>
+
+    <include resource="logback/error-appender.xml"/>
+    <include resource="logback/info-appender.xml"/>
+    <include resource="logback/warn-appender.xml"/>
+    <include resource="logback/stdout-appender.xml"/>
+
+    <!-- 日志输出级别 -->
+    <root level="INFO">
+        <appender-ref ref="BASE-FILE-INFO"/>
+        <appender-ref ref="BASE-FILE-WARN"/>
+        <appender-ref ref="BASE-FILE-ERROR"/>
+        <if condition='isNull("logSwitch")'>
+            <then>
+                <appender-ref ref="STDOUT"/>
+            </then>
+        </if>
+    </root>
+</configuration>

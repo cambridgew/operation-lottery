@@ -26,6 +26,8 @@
         <mysql.version>8.0.21</mysql.version>
         <druid.version>1.1.10</druid.version>
         <fastjson.version>1.2.62</fastjson.version>
+        <annotations.version>3.0.1</annotations.version>
+        <poseidon.version>1.0.1-SNAPSHOT</poseidon.version>
     </properties>
 
     <dependencyManagement>
@@ -76,6 +78,17 @@
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>annotations</artifactId>
+                <version>${annotations.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.indiv.cambridgew</groupId>
+                <artifactId>poseidon</artifactId>
+                <version>${poseidon.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -103,6 +116,19 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.indiv.cambridgew</groupId>
+            <artifactId>poseidon</artifactId>
         </dependency>
     </dependencies>
 

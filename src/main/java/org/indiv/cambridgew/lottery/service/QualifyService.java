@@ -5,11 +5,13 @@ import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import org.indiv.cambridgew.lottery.common.RecordQualificationOperationEnum;
 import org.indiv.cambridgew.lottery.dao.ParticipantMapper;
 import org.indiv.cambridgew.lottery.dao.RecordQualificationMapper;
+import org.indiv.cambridgew.lottery.dto.QualificationDetailDTO;
 import org.indiv.cambridgew.lottery.dto.QualifyDTO;
 import org.indiv.cambridgew.lottery.entity.Participant;
 import org.indiv.cambridgew.lottery.entity.Qualification;
 import org.indiv.cambridgew.lottery.entity.RecordQualification;
 import org.indiv.cambridgew.lottery.validator.QualificationValidator;
+import org.indiv.cambridgew.poseidon.core.annotation.MethodLog;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -42,6 +44,21 @@ public class QualifyService {
         Qualification qualification = validator.validate(dto.getActId(), dto.getEventKey(), dto.getUserId());
         // 资格落库
         save(qualification, dto.getUserId(), dto.getSource());
+    }
+
+    public QualificationDetailDTO getQualification() {
+        return null;
+    }
+
+    @MethodLog
+    public long test() {
+        long res = 1;
+        for (int i =0; i < 999; i++) {
+            if(i%2 !=0) {
+                res *= i;
+            }
+        }
+        return res;
     }
 
     /**
