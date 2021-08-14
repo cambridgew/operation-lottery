@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce48a083-63e1-4543-9339-0e0dfae626dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/constant/ColumnConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/PrizeDetailDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/DrawDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/QualificationQueryDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Prize.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/manager/QualificationManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql-list.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql-list.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/constant/ErrorMsgConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/constant/ErrorMsgConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualificationDetailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualificationDetailDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualifyDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/QualifyDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/endpoint/QualificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/endpoint/QualificationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Jackpot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Jackpot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Participant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Participant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Qualification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Qualification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/LotteryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/LotteryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/QualifyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/QualifyService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,7 +30,7 @@
           <entry key="gitignore" value="1" />
           <entry key="java" value="186" />
           <entry key="md" value="4" />
-          <entry key="properties" value="10" />
+          <entry key="properties" value="11" />
           <entry key="sql" value="3" />
           <entry key="txt" value="1" />
           <entry key="xml" value="16" />
@@ -61,7 +42,7 @@
           <entry key="JAVA" value="186" />
           <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Properties" value="10" />
+          <entry key="Properties" value="11" />
           <entry key="SQL" value="3" />
           <entry key="XML" value="16" />
           <entry key="spring.factories" value="4" />
@@ -71,10 +52,10 @@
         <counts>
           <entry key="dummy" value="43" />
           <entry key="factories" value="27" />
-          <entry key="gitignore" value="39" />
-          <entry key="java" value="9084" />
+          <entry key="gitignore" value="50" />
+          <entry key="java" value="9094" />
           <entry key="md" value="258" />
-          <entry key="properties" value="84" />
+          <entry key="properties" value="85" />
           <entry key="sql" value="291" />
           <entry key="txt" value="280" />
           <entry key="xml" value="193" />
@@ -82,10 +63,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9084" />
+          <entry key="JAVA" value="9094" />
           <entry key="Markdown" value="258" />
-          <entry key="PLAIN_TEXT" value="362" />
-          <entry key="Properties" value="84" />
+          <entry key="PLAIN_TEXT" value="373" />
+          <entry key="Properties" value="85" />
           <entry key="SQL" value="291" />
           <entry key="XML" value="193" />
           <entry key="spring.factories" value="27" />
@@ -98,8 +79,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/LotteryService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="330">
+              <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,7 +92,16 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="25" column="22" selection-end-line="25" selection-end-column="22" />
+              <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -119,7 +109,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/manager/QualificationManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
+            <state relative-caret-position="600">
               <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -152,8 +142,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/QualifyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="170">
+              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -184,18 +177,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="135">
               <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/PrizeDetailDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="14" column="27" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -264,7 +245,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/app.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/logback-spring.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/LotteryApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/common/SystemLog.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/common/SystemLogAspect.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -289,6 +269,7 @@
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/constant/ErrorMsgConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/manager/QualificationManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/LotteryService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -489,14 +470,6 @@
               <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
               <item name="operation-lottery" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="operation-lottery" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -519,7 +492,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1628937338021" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1628937457424" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -576,12 +549,12 @@
       <updated>1628069131593</updated>
       <workItem from="1628069137543" duration="19850000" />
       <workItem from="1628661444495" duration="9219000" />
-      <workItem from="1628697850791" duration="23619000" />
+      <workItem from="1628697850791" duration="23842000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74850000" />
+    <option name="totallyTimeSpent" value="75073000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -599,14 +572,14 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.32891566" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32891566" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49928468" weight="0.31084338" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007153" side_tool="true" weight="0.32891566" />
-      <window_info anchor="bottom" id="Statistic" order="10" />
+      <window_info anchor="bottom" id="Statistic" order="10" sideWeight="0.49928468" weight="0.32891566" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" />
@@ -878,13 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Qualification.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
@@ -990,13 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/QualifyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/validator/CommonValidator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -1020,8 +979,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/manager/QualificationManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="600">
           <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/QualifyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1030,18 +999,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/LotteryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="330">
+          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="25" column="22" selection-end-line="25" selection-end-column="22" />
+          <caret line="25" column="33" lean-forward="true" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
         </state>
       </provider>
     </entry>
