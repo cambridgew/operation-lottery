@@ -2,16 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce48a083-63e1-4543-9339-0e0dfae626dd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualificationDetailDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/app.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback-spring.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/constant/ColumnConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/PrizeDetailDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/DrawDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/QualificationQueryDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Prize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/manager/QualificationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql-list.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql-list.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/constant/ErrorMsgConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/constant/ErrorMsgConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualificationDetailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualificationDetailDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualifyDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/QualifyDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/endpoint/QualificationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/endpoint/QualificationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Jackpot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Jackpot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Participant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Participant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Qualification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Qualification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/LotteryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/LotteryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/QualifyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/QualifyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/spring.factories" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,23 +46,24 @@
         <counts>
           <entry key="class" value="7" />
           <entry key="factories" value="4" />
-          <entry key="java" value="145" />
+          <entry key="gitignore" value="1" />
+          <entry key="java" value="186" />
           <entry key="md" value="4" />
-          <entry key="properties" value="8" />
-          <entry key="sql" value="1" />
+          <entry key="properties" value="10" />
+          <entry key="sql" value="3" />
           <entry key="txt" value="1" />
-          <entry key="xml" value="14" />
+          <entry key="xml" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="7" />
-          <entry key="JAVA" value="145" />
+          <entry key="JAVA" value="186" />
           <entry key="Markdown" value="4" />
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Properties" value="8" />
-          <entry key="SQL" value="1" />
-          <entry key="XML" value="14" />
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Properties" value="10" />
+          <entry key="SQL" value="3" />
+          <entry key="XML" value="16" />
           <entry key="spring.factories" value="4" />
         </counts>
       </usages-collector>
@@ -59,22 +71,23 @@
         <counts>
           <entry key="dummy" value="43" />
           <entry key="factories" value="27" />
-          <entry key="java" value="6456" />
+          <entry key="gitignore" value="39" />
+          <entry key="java" value="9084" />
           <entry key="md" value="258" />
-          <entry key="properties" value="82" />
-          <entry key="sql" value="225" />
+          <entry key="properties" value="84" />
+          <entry key="sql" value="291" />
           <entry key="txt" value="280" />
-          <entry key="xml" value="182" />
+          <entry key="xml" value="193" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6456" />
+          <entry key="JAVA" value="9084" />
           <entry key="Markdown" value="258" />
-          <entry key="PLAIN_TEXT" value="323" />
-          <entry key="Properties" value="82" />
-          <entry key="SQL" value="225" />
-          <entry key="XML" value="182" />
+          <entry key="PLAIN_TEXT" value="362" />
+          <entry key="Properties" value="84" />
+          <entry key="SQL" value="291" />
+          <entry key="XML" value="193" />
           <entry key="spring.factories" value="27" />
         </counts>
       </usages-collector>
@@ -83,59 +96,109 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/indiv/cambridgew/poseidon/1.0.1-SNAPSHOT/poseidon-1.0.1-SNAPSHOT-sources.jar!/org/indiv/cambridgew/poseidon/core/annotation/MethodLog.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/LotteryService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/logback-spring.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1440">
-              <caret line="96" column="44" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
+            <state relative-caret-position="315">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/indiv/cambridgew/poseidon/1.0.1-SNAPSHOT/poseidon-1.0.1-SNAPSHOT-sources.jar!/org/indiv/cambridgew/poseidon/core/CoreAutoConfiguration.java">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="375">
+              <caret line="25" column="22" selection-end-line="25" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/manager/QualificationManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
               <folding>
-                <element signature="e#388#389#0" expanded="true" />
-                <element signature="e#432#433#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/LotteryApplication.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/constant/ErrorMsgConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+            <state relative-caret-position="465">
+              <caret line="36" column="60" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.3.RELEASE/spring-boot-autoconfigure-2.1.3.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/SpringBootApplication.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Participant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+            <state relative-caret-position="395">
+              <caret line="35" column="25" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.3.RELEASE/spring-boot-autoconfigure-2.1.3.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/EnableAutoConfiguration.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/QualifyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="80" column="23" selection-start-line="80" selection-start-column="23" selection-end-line="80" selection-end-column="23" />
+            <state relative-caret-position="270">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/QualifyDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/DrawDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/QualificationQueryDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/PrizeDetailDTO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="14" column="27" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -145,6 +208,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -164,6 +228,9 @@
       <find>Method Log</find>
       <find>include</find>
       <find>MethodLogAd</find>
+      <find>aop</find>
+      <find>Content-Type cannot contain wildcard type ‘*’</find>
+      <find>Content-Type cannot contain wildcard type</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,31 +239,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/LotteryApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/common/BaseEntity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/mapper/ActivityMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/mapper/JackpotMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/config/LoadingCacheConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/entity/Jackpot.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/entity/Activity.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/config/MybatisPlusConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/config/SwaggerConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Event.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/mapper/QualificationMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/mapper/ParticipantMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/LotteryService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/dto/QualifyDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/config/ExceptionAdvice.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/config/ExceptionHandlerAdvice.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/validator/QualificationValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/validator/CommonValidator.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/QualificationRecord.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/mapper/RecordQualificationMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/RecordLottery.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/mapper/RecordLotteryMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/constant/ErrorMsgConstants.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Qualification.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Participant.java" />
         <option value="$PROJECT_DIR$/src/main/resources/core-dao.properties" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/config/CoreAutoConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/common/RecordQualificationOperationEnum.java" />
@@ -205,9 +253,7 @@
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/config/WebConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/common/ResultCode.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/advice/ExceptionHandlerAdvice.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Activity.java" />
         <option value="$PROJECT_DIR$/sql-list.txt" />
-        <option value="$PROJECT_DIR$/sql-list.sql" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/validator/AbstractValidator.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/resources/logback/error-appender.xml" />
@@ -215,14 +261,35 @@
         <option value="$PROJECT_DIR$/src/main/resources/logback/warn-appender.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/logback/stdout-appender.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/spring.factories" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualificationDetailDTO.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/app.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/logback-spring.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/QualifyService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/endpoint/QualificationController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/LotteryApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/common/SystemLog.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/common/SystemLogAspect.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualificationQueryDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/query/QueryWrapperBuilder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/constant/ColumnConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/query/QualificationQueryDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualificationDetailDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/endpoint/QualificationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Qualification.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Prize.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Activity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Jackpot.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/PrizeDetailDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualifyDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/QualifyDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/DrawDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Participant.java" />
+        <option value="$PROJECT_DIR$/sql-list.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/QualificationQueryDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/QualifyService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/constant/ErrorMsgConstants.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/manager/QualificationManager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/LotteryService.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -360,7 +427,7 @@
               <item name="indiv" type="462c0819:PsiDirectoryNode" />
               <item name="cambridgew" type="462c0819:PsiDirectoryNode" />
               <item name="lottery" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="constant" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
@@ -384,7 +451,8 @@
               <item name="indiv" type="462c0819:PsiDirectoryNode" />
               <item name="cambridgew" type="462c0819:PsiDirectoryNode" />
               <item name="lottery" type="462c0819:PsiDirectoryNode" />
-              <item name="endpoint" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+              <item name="req" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
@@ -396,7 +464,7 @@
               <item name="indiv" type="462c0819:PsiDirectoryNode" />
               <item name="cambridgew" type="462c0819:PsiDirectoryNode" />
               <item name="lottery" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
@@ -409,18 +477,6 @@
               <item name="cambridgew" type="462c0819:PsiDirectoryNode" />
               <item name="lottery" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="operation-lottery" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="indiv" type="462c0819:PsiDirectoryNode" />
-              <item name="cambridgew" type="462c0819:PsiDirectoryNode" />
-              <item name="lottery" type="462c0819:PsiDirectoryNode" />
-              <item name="validator" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
@@ -447,81 +503,6 @@
               <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
-            <path>
-              <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.indiv.cambridgew:poseidon:1.0.1-SNAPSHOT" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.indiv.cambridgew:poseidon:1.0.1-SNAPSHOT" type="70bed36:NamedLibraryElementNode" />
-              <item name="poseidon-1.0.1-SNAPSHOT.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.indiv.cambridgew:poseidon:1.0.1-SNAPSHOT" type="70bed36:NamedLibraryElementNode" />
-              <item name="poseidon-1.0.1-SNAPSHOT.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.indiv.cambridgew:poseidon:1.0.1-SNAPSHOT" type="70bed36:NamedLibraryElementNode" />
-              <item name="poseidon-1.0.1-SNAPSHOT.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.indiv.cambridgew:poseidon:1.0.1-SNAPSHOT" type="70bed36:NamedLibraryElementNode" />
-              <item name="poseidon-1.0.1-SNAPSHOT.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="indiv" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.indiv.cambridgew:poseidon:1.0.1-SNAPSHOT" type="70bed36:NamedLibraryElementNode" />
-              <item name="poseidon-1.0.1-SNAPSHOT.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="indiv" type="462c0819:PsiDirectoryNode" />
-              <item name="cambridgew" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.indiv.cambridgew:poseidon:1.0.1-SNAPSHOT" type="70bed36:NamedLibraryElementNode" />
-              <item name="poseidon-1.0.1-SNAPSHOT.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="indiv" type="462c0819:PsiDirectoryNode" />
-              <item name="cambridgew" type="462c0819:PsiDirectoryNode" />
-              <item name="poseidon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.indiv.cambridgew:poseidon:1.0.1-SNAPSHOT" type="70bed36:NamedLibraryElementNode" />
-              <item name="poseidon-1.0.1-SNAPSHOT.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="indiv" type="462c0819:PsiDirectoryNode" />
-              <item name="cambridgew" type="462c0819:PsiDirectoryNode" />
-              <item name="poseidon" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="operation-lottery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.indiv.cambridgew:poseidon:1.0.1-SNAPSHOT" type="70bed36:NamedLibraryElementNode" />
-              <item name="poseidon-1.0.1-SNAPSHOT.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="org" type="462c0819:PsiDirectoryNode" />
-              <item name="indiv" type="462c0819:PsiDirectoryNode" />
-              <item name="cambridgew" type="462c0819:PsiDirectoryNode" />
-              <item name="poseidon" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="annotation" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -538,7 +519,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1628853985407" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1628937338021" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -595,18 +576,18 @@
       <updated>1628069131593</updated>
       <workItem from="1628069137543" duration="19850000" />
       <workItem from="1628661444495" duration="9219000" />
-      <workItem from="1628697850791" duration="10610000" />
+      <workItem from="1628697850791" duration="23619000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61841000" />
+    <option name="totallyTimeSpent" value="74850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.33619457" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.33619457" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -618,7 +599,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" visible="true" weight="0.36506024" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -649,18 +630,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$MAVEN_REPOSITORY$/org/indiv/cambridgew/poseidon/1.0.1-SNAPSHOT/poseidon-1.0.1-SNAPSHOT-sources.jar!/org/indiv/cambridgew/poseidon/core/CoreAutoConfiguration.java</url>
-          <line>13</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
@@ -678,269 +647,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar!/org/slf4j/event/Level.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/common/RecordQualificationOperationEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dao/RecordQualificationMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.5.RELEASE/spring-webmvc-5.1.5.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="87" column="13" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.5.RELEASE/spring-webmvc-5.1.5.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="114" column="13" selection-start-line="114" selection-start-column="13" selection-end-line="114" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/advice/ExceptionHandlerAdvice.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Jackpot.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="30" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/common/BaseEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/common/Result.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#659#660#0" expanded="true" />
-            <element signature="e#709#710#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/common/ResultCode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="12" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/config/WebConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="12" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Participant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="37" column="17" lean-forward="true" selection-start-line="37" selection-start-column="7" selection-end-line="37" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Activity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/RecordLottery.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualifyDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/RecordQualification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Qualification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="55" column="29" selection-start-line="24" selection-start-column="4" selection-end-line="55" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/validator/QualificationValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="39" column="22" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/validator/CommonValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logback/error-appender.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="11" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logback/info-appender.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logback/warn-appender.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/logback/stdout-appender.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql-list.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="84" column="23" lean-forward="true" selection-start-line="84" selection-start-column="23" selection-end-line="84" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/validator/AbstractValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-935">
-          <caret line="29" column="22" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret selection-end-line="12" selection-end-column="37" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualificationDetailDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="123" column="21" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot/2.1.3.RELEASE/spring-boot-2.1.3.RELEASE.jar!/org/springframework/boot/logging/logback/LogbackLoggingSystem.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="96" column="9" selection-start-line="96" selection-start-column="9" selection-end-line="96" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/app.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/ch/qos/logback/logback-core/1.2.3/logback-core-1.2.3-sources.jar!/ch/qos/logback/core/FileAppender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
@@ -999,39 +705,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/QualifyService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1617#1618#0" expanded="true" />
-            <element signature="e#1644#1645#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/endpoint/QualificationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="51" column="65" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/core-dao.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="59" selection-start-line="1" selection-start-column="59" selection-end-line="1" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/LotteryApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1056,6 +733,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/indiv/cambridgew/poseidon/1.0.1-SNAPSHOT/poseidon-1.0.1-SNAPSHOT-sources.jar!/org/indiv/cambridgew/poseidon/core/annotation/LogBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/indiv/cambridgew/poseidon/1.0.1-SNAPSHOT/poseidon-1.0.1-SNAPSHOT-sources.jar!/org/indiv/cambridgew/poseidon/core/log/AppIdDefiner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="13" column="68" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/LotteryApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/logback-spring.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1440">
@@ -1063,35 +761,287 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/indiv/cambridgew/poseidon/1.0.1-SNAPSHOT/poseidon-1.0.1-SNAPSHOT-sources.jar!/org/indiv/cambridgew/poseidon/core/annotation/MethodLogAdvice.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/common/SystemLog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        <state relative-caret-position="165">
+          <caret line="11" column="20" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/common/SystemLogAspect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="160">
+          <caret line="27" column="35" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/indiv/cambridgew/poseidon/1.0.1-SNAPSHOT/poseidon-1.0.1-SNAPSHOT-sources.jar!/org/indiv/cambridgew/poseidon/core/annotation/MethodLogAdvice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="43" column="39" lean-forward="true" selection-start-line="43" selection-start-column="39" selection-end-line="43" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/indiv/cambridgew/poseidon/1.0.1-SNAPSHOT/poseidon-1.0.1-SNAPSHOT-sources.jar!/org/indiv/cambridgew/poseidon/core/annotation/MethodLog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        <state relative-caret-position="240">
+          <caret line="16" column="31" selection-start-line="15" selection-start-column="4" selection-end-line="16" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/indiv/cambridgew/poseidon/1.0.1-SNAPSHOT/poseidon-1.0.1-SNAPSHOT-sources.jar!/org/indiv/cambridgew/poseidon/core/CoreAutoConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
-            <element signature="e#388#389#0" expanded="true" />
-            <element signature="e#432#433#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.5.RELEASE/spring-web-5.1.5.RELEASE-sources.jar!/org/springframework/web/filter/OncePerRequestFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="110" selection-start-line="110" selection-end-line="110" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.5.RELEASE/spring-core-5.1.5.RELEASE-sources.jar!/org/springframework/util/MimeType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="260" column="18" selection-start-line="260" selection-start-column="18" selection-end-line="260" selection-end-column="18" />
+          <folding>
+            <element signature="e#7467#7468#0" expanded="true" />
+            <element signature="e#7512#7513#0" expanded="true" />
+            <element signature="e#8235#8236#0" expanded="true" />
+            <element signature="e#8258#8259#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.5.RELEASE/spring-web-5.1.5.RELEASE-sources.jar!/org/springframework/http/HttpHeaders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="905" column="7" lean-forward="true" selection-start-line="905" selection-start-column="7" selection-end-line="905" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.16/tomcat-embed-core-9.0.16-sources.jar!/org/apache/catalina/core/ApplicationFilterChain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="194" selection-start-line="194" selection-end-line="194" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.5.RELEASE/spring-web-5.1.5.RELEASE-sources.jar!/org/springframework/http/MediaType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="116" column="31" selection-start-line="116" selection-start-column="31" selection-end-line="116" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.4.1/mybatis-plus-core-3.4.1-sources.jar!/com/baomidou/mybatisplus/core/conditions/interfaces/Compare.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+          <folding>
+            <element signature="e#2332#2333#0" expanded="true" />
+            <element signature="e#2376#2377#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/constant/ColumnConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="66" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/endpoint/QualificationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Qualification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="31" column="29" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Activity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="30" column="30" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Jackpot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Prize.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/QualificationDetailDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" selection-start-line="14" selection-end-line="15" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/PrizeDetailDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="14" column="27" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/QualifyDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/entity/Participant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="35" column="25" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql-list.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="44" column="6" lean-forward="true" selection-start-line="44" selection-start-column="6" selection-end-line="44" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/QueryWrapperBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/DrawDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/dto/req/QualificationQueryDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/QualifyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/validator/CommonValidator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="19" column="61" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.1.5.RELEASE/spring-core-5.1.5.RELEASE-sources.jar!/org/springframework/util/CollectionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="52" column="26" selection-start-line="52" selection-start-column="26" selection-end-line="52" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/constant/ErrorMsgConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="36" column="60" selection-start-line="36" selection-start-column="31" selection-end-line="36" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/manager/QualificationManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/indiv/cambridgew/lottery/service/LotteryService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="22" selection-end-line="25" selection-end-column="22" />
         </state>
       </provider>
     </entry>

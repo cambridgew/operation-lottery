@@ -2,6 +2,7 @@
 CREATE TABLE `tb_activity` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
   `name` varchar(128) NOT NULL COMMENT '活动名称',
+  `description` text NULL COMMENT '活动信息, 描述信息',
   `status` char(16) NOT NULL DEFAULT 'active' COMMENT '活动状态, active-有效, invalid-无效',
   `start_time` timestamp NOT NULL COMMENT '活动开始时间',
   `end_time` timestamp NOT NULL COMMENT '活动结束时间',
@@ -31,6 +32,7 @@ CREATE TABLE `tb_participant` (
   `user_id` bigint(11) NOT NULL COMMENT '用户Id',
   `current_chance_number` int(11) NOT NULL DEFAULT 0 COMMENT '当前资格剩余抽奖次数',
   `total_chance_number` int(11) NOT NULL DEFAULT 0 COMMENT '当前资格总抽奖次数',
+  `status` char(16) NOT NULL DEFAULT '' COMMENT '当前资格总抽奖次数',
   `act_id` int(11) NOT NULL COMMENT '活动Id-冗余字段',
   `priority` int(11) NOT NULL DEFAULT 0 COMMENT '资格消耗优先级-冗余字段',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -45,6 +47,7 @@ CREATE TABLE `tb_qualification` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
   `act_id` int(11) NOT NULL COMMENT '活动Id',
   `event_key` varchar(64) NOT NULL COMMENT '资格事件名称',
+  `jackpot_id` int(11) NOT NULL COMMENT '奖池Id',
   `start_time` timestamp NOT NULL COMMENT '资格开始时间',
   `end_time` timestamp NOT NULL COMMENT '资格结束时间',
   `dependents` varchar(64) NULL COMMENT '当前资格所依赖的资格, 资格Id用,隔开',

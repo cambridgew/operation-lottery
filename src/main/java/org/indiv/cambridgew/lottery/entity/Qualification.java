@@ -28,6 +28,9 @@ public class Qualification extends BaseEntity implements Comparable<Qualificatio
     // 资格事件
     private String eventKey;
 
+    // 奖池Id
+    private Integer jackpotId;
+
     // 资格开始时间
     private LocalDateTime startTime;
 

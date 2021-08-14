@@ -26,6 +26,11 @@ public class Activity extends BaseEntity {
     private String name;
 
     /**
+     * 活动说明, 描述信息
+     */
+    private String description;
+
+    /**
      * 活动状态
      * invalid - 无效
      * active - 有效

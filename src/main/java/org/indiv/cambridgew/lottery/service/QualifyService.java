@@ -6,16 +6,20 @@ import org.indiv.cambridgew.lottery.common.RecordQualificationOperationEnum;
 import org.indiv.cambridgew.lottery.dao.ParticipantMapper;
 import org.indiv.cambridgew.lottery.dao.RecordQualificationMapper;
 import org.indiv.cambridgew.lottery.dto.QualificationDetailDTO;
-import org.indiv.cambridgew.lottery.dto.QualifyDTO;
+import org.indiv.cambridgew.lottery.dto.req.QualificationQueryDTO;
+import org.indiv.cambridgew.lottery.dto.req.QualifyDTO;
 import org.indiv.cambridgew.lottery.entity.Participant;
 import org.indiv.cambridgew.lottery.entity.Qualification;
 import org.indiv.cambridgew.lottery.entity.RecordQualification;
+import org.indiv.cambridgew.lottery.manager.QualificationManager;
 import org.indiv.cambridgew.lottery.validator.QualificationValidator;
-import org.indiv.cambridgew.poseidon.core.annotation.MethodLog;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -32,6 +36,8 @@ public class QualifyService {
     @Resource
     private ParticipantMapper participantMapper;
     @Resource
+    private QualificationManager qualificationManager;
+    @Resource
     private RecordQualificationMapper recordQualificationMapper;
 
     /**
@@ -46,19 +52,24 @@ public class QualifyService {
         save(qualification, dto.getUserId(), dto.getSource());
     }
 
-    public QualificationDetailDTO getQualification() {
-        return null;
-    }
-
-    @MethodLog
-    public long test() {
-        long res = 1;
-        for (int i =0; i < 999; i++) {
-            if(i%2 !=0) {
-                res *= i;
-            }
-        }
-        return res;
+    /**
+     * 资格详情查询
+     *
+     * @param dto 查询DTO
+     * @return 资格详情
+     */
+    public QualificationDetailDTO getQualification(QualificationQueryDTO dto) {
+        QualificationDetailDTO result = new QualificationDetailDTO();
+        BeanUtils.copyProperties(dto, result);
+        List<QualificationDetailDTO.QualificationDetail> qualificationDetailList = new ArrayList<>();
+        Optional.ofNullable(qualificationManager.queryParticipant(dto.getActId(), dto.getUserId(), dto.getQualificationId()))
+                .ifPresent(list -> list.forEach(item -> {
+                    QualificationDetailDTO.QualificationDetail detail = new QualificationDetailDTO.QualificationDetail();
+                    BeanUtils.copyProperties(item, detail);
+                    qualificationDetailList.add(detail);
+                }));
+        result.setQualificationDetails(qualificationDetailList);
+        return result;
     }
 
     /**

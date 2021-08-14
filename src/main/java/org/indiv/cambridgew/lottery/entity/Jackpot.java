@@ -17,4 +17,5 @@ import org.indiv.cambridgew.lottery.common.BaseEntity;
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class Jackpot extends BaseEntity {
+
 }

@@ -32,6 +32,9 @@ public class Participant extends BaseEntity {
     // 当前资格总抽奖次数
     private Integer totalChanceNumber;
 
+    // 状态, 用于标识是否正在抽奖中
+    private String status;
+
     // 活动Id-冗余
     private Integer actId;
 

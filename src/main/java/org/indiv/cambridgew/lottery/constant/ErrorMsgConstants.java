@@ -26,4 +26,14 @@ public class ErrorMsgConstants {
 
     public static final String DEPENDENT_QUALIFICATION_NOT_EXIST = "尚未满足依赖资格";
 
+    public static final String QUALIFICATION_NOT_POSSESS = "尚未获得抽奖资格";
+
+    public static final String QUALIFICATION_EXHAUSTED = "抽奖资格已耗尽";
+
+
+
+
+
+    public static final String QUALIFICATION_CONSUME_FAILURE = "资格消耗失败";
+
 }
