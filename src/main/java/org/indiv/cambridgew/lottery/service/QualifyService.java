@@ -11,7 +11,7 @@ import org.indiv.cambridgew.lottery.dto.req.QualifyDTO;
 import org.indiv.cambridgew.lottery.entity.Participant;
 import org.indiv.cambridgew.lottery.entity.Qualification;
 import org.indiv.cambridgew.lottery.entity.RecordQualification;
-import org.indiv.cambridgew.lottery.manager.QualificationManager;
+import org.indiv.cambridgew.lottery.manager.qualify.QualificationManager;
 import org.indiv.cambridgew.lottery.validator.QualificationValidator;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;

@@ -38,6 +38,11 @@ public class Activity extends BaseEntity {
     private String status;
 
     /**
+     * 抽奖执行方式(按照资格/按照次数)
+     */
+    private String drawOperationType;
+
+    /**
      * 活动开始时间
      */
     private LocalDateTime startTime;

@@ -3,7 +3,7 @@ package org.indiv.cambridgew.lottery.service;
 import org.indiv.cambridgew.lottery.dto.PrizeDetailDTO;
 import org.indiv.cambridgew.lottery.dto.req.DrawDTO;
 import org.indiv.cambridgew.lottery.entity.Participant;
-import org.indiv.cambridgew.lottery.manager.QualificationManager;
+import org.indiv.cambridgew.lottery.manager.qualify.QualificationManager;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;

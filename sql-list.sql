@@ -4,6 +4,7 @@ CREATE TABLE `tb_activity` (
   `name` varchar(128) NOT NULL COMMENT '活动名称',
   `description` text NULL COMMENT '活动信息, 描述信息',
   `status` char(16) NOT NULL DEFAULT 'active' COMMENT '活动状态, active-有效, invalid-无效',
+  `draw_operation_type` char(32) NOT NULL DEFAULT 'event' COMMENT '抽奖执行方式, event-按照资格, times-按照次数',
   `start_time` timestamp NOT NULL COMMENT '活动开始时间',
   `end_time` timestamp NOT NULL COMMENT '活动结束时间',
   `draw_start_time` timestamp NOT NULL COMMENT '抽奖开始时间',

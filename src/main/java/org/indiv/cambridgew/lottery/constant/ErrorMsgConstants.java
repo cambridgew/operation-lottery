@@ -33,7 +33,8 @@ public class ErrorMsgConstants {
 
 
 
-
     public static final String QUALIFICATION_CONSUME_FAILURE = "资格消耗失败";
+
+    public static final String DRAW_OPERATION_NOT_EXIST = "抽奖方式不存在";
 
 }

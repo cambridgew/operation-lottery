@@ -1,4 +1,4 @@
-package org.indiv.cambridgew.lottery.manager;
+package org.indiv.cambridgew.lottery.manager.qualify;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;

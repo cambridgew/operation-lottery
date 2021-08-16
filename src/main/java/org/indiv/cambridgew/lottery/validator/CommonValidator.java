@@ -11,7 +11,7 @@ import static org.indiv.cambridgew.lottery.constant.ErrorMsgConstants.QUALIFICAT
  * @author cambridge.w
  * @since 2021/8/9
  */
-@Component("COMMON")
+@Component("common")
 public class CommonValidator extends AbstractValidator {
 
     @Override

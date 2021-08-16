@@ -4,10 +4,8 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
-import org.indiv.cambridgew.lottery.entity.Activity;
-import org.indiv.cambridgew.lottery.entity.Jackpot;
 import org.indiv.cambridgew.lottery.dao.ActivityMapper;
-import org.indiv.cambridgew.lottery.dao.JackpotMapper;
+import org.indiv.cambridgew.lottery.entity.Activity;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -24,9 +22,6 @@ public class LoadingCacheConfig {
     @Resource
     private ActivityMapper activityMapper;
 
-    @Resource
-    private JackpotMapper jackpotMapper;
-
     /**
      * 活动信息本地缓存
      */
@@ -41,24 +36,6 @@ public class LoadingCacheConfig {
                         LambdaQueryWrapper<Activity> query = new LambdaQueryWrapper<>();
                         query.eq(Activity::getId, key);
                         return activityMapper.selectOne(query);
-                    }
-                });
-    }
-
-    /**
-     * 奖池信息本地缓存
-     */
-    @Bean(name = "jackpotCache")
-    public LoadingCache<Integer, Jackpot> createJackpotLocalCache() {
-        return CacheBuilder.newBuilder()
-                .expireAfterWrite(30, TimeUnit.MINUTES)
-                .initialCapacity(16)
-                .build(new CacheLoader<Integer, Jackpot>() {
-                    @Override
-                    public Jackpot load(Integer key) {
-                        LambdaQueryWrapper<Jackpot> query = new LambdaQueryWrapper<>();
-                        query.eq(Jackpot::getId, key);
-                        return jackpotMapper.selectOne(query);
                     }
                 });
     }
