@@ -12,7 +12,6 @@ import org.indiv.cambridgew.lottery.entity.Participant;
 import org.indiv.cambridgew.lottery.entity.Qualification;
 import org.indiv.cambridgew.lottery.entity.RecordQualification;
 import org.indiv.cambridgew.lottery.manager.qualify.QualificationManager;
-import org.indiv.cambridgew.lottery.validator.QualificationValidator;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -32,11 +31,9 @@ import java.util.Optional;
 public class QualifyService {
 
     @Resource
-    private QualificationValidator validator;
+    private QualificationManager qualificationManager;
     @Resource
     private ParticipantMapper participantMapper;
-    @Resource
-    private QualificationManager qualificationManager;
     @Resource
     private RecordQualificationMapper recordQualificationMapper;
 
@@ -47,7 +44,7 @@ public class QualifyService {
      */
     public void qualify(QualifyDTO dto) {
         // 校验是否可以下发资格
-        Qualification qualification = validator.validate(dto.getActId(), dto.getEventKey(), dto.getUserId());
+        Qualification qualification = qualificationManager.validate(dto.getActId(), dto.getEventKey(), dto.getUserId());
         // 资格落库
         save(qualification, dto.getUserId(), dto.getSource());
     }
@@ -62,7 +59,7 @@ public class QualifyService {
         QualificationDetailDTO result = new QualificationDetailDTO();
         BeanUtils.copyProperties(dto, result);
         List<QualificationDetailDTO.QualificationDetail> qualificationDetailList = new ArrayList<>();
-        Optional.ofNullable(qualificationManager.queryParticipant(dto.getActId(), dto.getUserId(), dto.getQualificationId()))
+        Optional.ofNullable(qualificationManager.queryParticipants(dto.getActId(), dto.getUserId(), dto.getQualificationId()))
                 .ifPresent(list -> list.forEach(item -> {
                     QualificationDetailDTO.QualificationDetail detail = new QualificationDetailDTO.QualificationDetail();
                     BeanUtils.copyProperties(item, detail);

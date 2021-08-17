@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import org.indiv.cambridgew.lottery.dao.JackpotIndexMapper;
 import org.indiv.cambridgew.lottery.dao.RecordLotteryMapper;
 import org.indiv.cambridgew.lottery.entity.JackpotIndex;
+import org.indiv.cambridgew.lottery.entity.Participant;
 import org.indiv.cambridgew.lottery.entity.RecordLottery;
 import org.springframework.stereotype.Component;
 
@@ -26,14 +27,8 @@ public class DrawTimesManager extends AbstractDrawManager {
     @Resource
     private JackpotIndexMapper jackpotIndexMapper;
 
-    /**
-     * 根据用户已抽奖次数确定用户抽奖所在的奖池
-     *
-     * @param actId  活动Id
-     * @param userId 用户Id
-     * @return 用户抽奖所在奖池
-     */
-    public Integer determinJackpot(Integer actId, Long userId) {
+    @Override
+    public Integer determineJackpot(Integer actId, Long userId, Participant participant) {
         // 当前活动该用户已抽奖次数
         int recordNumber = recordLotteryMapper.selectCount(Wrappers.<RecordLottery>lambdaQuery()
                 .eq(RecordLottery::getActId, actId)

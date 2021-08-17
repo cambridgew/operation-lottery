@@ -2,16 +2,17 @@ package org.indiv.cambridgew.lottery.service;
 
 import org.indiv.cambridgew.lottery.dto.PrizeDetailDTO;
 import org.indiv.cambridgew.lottery.dto.req.DrawDTO;
+import org.indiv.cambridgew.lottery.entity.Activity;
 import org.indiv.cambridgew.lottery.entity.Participant;
+import org.indiv.cambridgew.lottery.manager.ActivityResourceManager;
+import org.indiv.cambridgew.lottery.manager.draw.DrawManager;
 import org.indiv.cambridgew.lottery.manager.qualify.QualificationManager;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
-import java.util.List;
 
-import static org.indiv.cambridgew.lottery.constant.ErrorMsgConstants.*;
+import static org.indiv.cambridgew.lottery.constant.ErrorMsgConstants.QUALIFICATION_CONSUME_FAILURE;
 import static org.springframework.util.Assert.isTrue;
 
 /**
@@ -25,6 +26,10 @@ public class LotteryService {
 
     @Resource
     private QualificationManager qualificationManager;
+    @Resource
+    private DrawManager drawManager;
+    @Resource
+    private ActivityResourceManager activityResourceManager;
 
     /**
      * 抽奖
@@ -34,20 +39,15 @@ public class LotteryService {
      */
     @Transactional(rollbackFor = Exception.class)
     public PrizeDetailDTO draw(DrawDTO dto) {
-        // 资格消耗
-        List<Participant> p = qualificationManager.queryParticipant(dto.getActId(), dto.getUserId(), null);
-        isTrue(!CollectionUtils.isEmpty(p), QUALIFICATION_NOT_POSSESS);
-        Participant qualificationToConsume = p.stream()
-                .filter(item -> item.getCurrentChanceNumber() > 0)
-                .findFirst()
-                .orElseThrow(() -> new IllegalStateException(QUALIFICATION_EXHAUSTED));
-        isTrue(qualificationManager.consumeQualification(qualificationToConsume, 1), QUALIFICATION_CONSUME_FAILURE);
-        // TODO 资格消耗成功开始抽奖
-
+        // 尝试资格消耗
+        Participant qualificationToConsume = drawManager.determineParticipant(dto.getActId(), dto.getUserId());
+        isTrue(qualificationManager.consumeParticipant(qualificationToConsume, 1), QUALIFICATION_CONSUME_FAILURE);
+        // 资格消耗成功开始抽奖
+        Activity activity = activityResourceManager.findActivity(dto.getActId());
+        Integer prizeId = drawManager.draw(dto.getActId(), activity.getDrawOperationType(), dto.getUserId(), qualificationToConsume);
         // TODO 抽奖信息落库
         return new PrizeDetailDTO();
     }
-
 
 
 }

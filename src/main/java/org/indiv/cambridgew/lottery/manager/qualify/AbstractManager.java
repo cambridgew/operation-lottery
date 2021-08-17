@@ -1,4 +1,4 @@
-package org.indiv.cambridgew.lottery.validator;
+package org.indiv.cambridgew.lottery.manager.qualify;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.indiv.cambridgew.lottery.common.RecordQualificationOperationEnum;
@@ -22,12 +22,10 @@ import static org.indiv.cambridgew.lottery.constant.ErrorMsgConstants.*;
 import static org.springframework.util.Assert.isTrue;
 
 /**
- * 抽象通用校验
- *
  * @author cambridge.w
  * @since 2021/8/5
  */
-public abstract class AbstractValidator implements QualificationValidator.Validator {
+public abstract class AbstractManager implements QualificationManager.Validator {
 
     @Resource
     private QualificationMapper qualificationMapper;

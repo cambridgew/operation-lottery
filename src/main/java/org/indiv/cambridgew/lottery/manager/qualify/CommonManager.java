@@ -1,4 +1,4 @@
-package org.indiv.cambridgew.lottery.validator;
+package org.indiv.cambridgew.lottery.manager.qualify;
 
 import org.indiv.cambridgew.lottery.entity.Qualification;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ import static org.indiv.cambridgew.lottery.constant.ErrorMsgConstants.QUALIFICAT
  * @since 2021/8/9
  */
 @Component("common")
-public class CommonValidator extends AbstractValidator {
+public class CommonManager extends AbstractManager {
 
     @Override
     public Qualification doValidate(Qualification qualification, Long userId) {

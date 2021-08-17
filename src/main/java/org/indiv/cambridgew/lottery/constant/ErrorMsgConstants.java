@@ -8,6 +8,8 @@ package org.indiv.cambridgew.lottery.constant;
  */
 public class ErrorMsgConstants {
 
+    public static final String ACTIVITY_NOT_EXIST = "活动不存在";
+
     public static final String QUALIFICATION_NOT_EXIST = "不存在满足条件的抽奖资格";
 
     public static final String EVENT_KEY_NOT_EXIST = "不存在对应的资格事件";
