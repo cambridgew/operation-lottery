@@ -1,12 +1,14 @@
 package org.indiv.cambridgew.lottery.service;
 
-import org.indiv.cambridgew.lottery.dto.PrizeDetailDTO;
+import org.indiv.cambridgew.lottery.dto.LotteryDetailDTO;
 import org.indiv.cambridgew.lottery.dto.req.DrawDTO;
 import org.indiv.cambridgew.lottery.entity.Activity;
 import org.indiv.cambridgew.lottery.entity.Participant;
-import org.indiv.cambridgew.lottery.manager.ActivityResourceManager;
+import org.indiv.cambridgew.lottery.entity.Prize;
+import org.indiv.cambridgew.lottery.manager.ResourceManager;
 import org.indiv.cambridgew.lottery.manager.draw.DrawManager;
 import org.indiv.cambridgew.lottery.manager.qualify.QualificationManager;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -29,7 +31,9 @@ public class LotteryService {
     @Resource
     private DrawManager drawManager;
     @Resource
-    private ActivityResourceManager activityResourceManager;
+    private ResourceManager resourceManager;
+    @Resource
+    private ThreadPoolTaskExecutor taskExecutor;
 
     /**
      * 抽奖
@@ -38,15 +42,17 @@ public class LotteryService {
      * @return 中奖详情
      */
     @Transactional(rollbackFor = Exception.class)
-    public PrizeDetailDTO draw(DrawDTO dto) {
+    public LotteryDetailDTO draw(DrawDTO dto) {
         // 尝试资格消耗
         Participant qualificationToConsume = drawManager.determineParticipant(dto.getActId(), dto.getUserId());
+        // 存在抽奖资格, 开始抽奖
+        Activity activity = resourceManager.findActivity(dto.getActId());
+        Prize prize = drawManager.draw(dto.getActId(), activity.getDrawOperationType(), dto.getUserId(), qualificationToConsume);
+        // 抽奖完毕消耗抽奖资格
         isTrue(qualificationManager.consumeParticipant(qualificationToConsume, 1), QUALIFICATION_CONSUME_FAILURE);
-        // 资格消耗成功开始抽奖
-        Activity activity = activityResourceManager.findActivity(dto.getActId());
-        Integer prizeId = drawManager.draw(dto.getActId(), activity.getDrawOperationType(), dto.getUserId(), qualificationToConsume);
-        // TODO 抽奖信息落库
-        return new PrizeDetailDTO();
+        // 中奖结果落库 TODO 待异步实现
+        drawManager.recordLottery(qualificationToConsume.getQualificationId(), dto.getUserId(), prize);
+        return new LotteryDetailDTO(dto.getUserId(), prize);
     }
 
 

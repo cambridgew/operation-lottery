@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @MapperScan({"org.indiv.cambridgew.lottery.dao"})
-public class MybatisPlusConfig {
+public class MybatisPlusConfiguration {
 
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {

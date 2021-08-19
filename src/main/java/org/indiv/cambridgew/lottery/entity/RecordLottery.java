@@ -1,9 +1,7 @@
 package org.indiv.cambridgew.lottery.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 import org.indiv.cambridgew.lottery.common.BaseEntity;
 
 /**
@@ -16,6 +14,9 @@ import org.indiv.cambridgew.lottery.common.BaseEntity;
 @TableName(value = "tb_record_lottery")
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class RecordLottery extends BaseEntity {
 
     // 本次抽奖消耗的资格Id
@@ -32,8 +33,5 @@ public class RecordLottery extends BaseEntity {
 
     // 活动Id-冗余
     private Integer actId;
-
-    // 资格名称-冗余
-    private String eventKey;
 
 }

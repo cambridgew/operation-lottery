@@ -1,7 +1,11 @@
 package org.indiv.cambridgew.lottery.manager.draw;
 
 import org.indiv.cambridgew.lottery.entity.Participant;
+import org.indiv.cambridgew.lottery.entity.Prize;
+import org.indiv.cambridgew.lottery.manager.ResourceManager;
 import org.springframework.lang.NonNull;
+
+import javax.annotation.Resource;
 
 /**
  * @author cambridge.w
@@ -9,11 +13,13 @@ import org.springframework.lang.NonNull;
  */
 public abstract class AbstractDrawManager implements DrawManager.DrawExecutor {
 
-    @Override
-    public Integer draw(Integer actId, Long userId, @NonNull Participant participant) {
-        Integer jackpotId = determineJackpot(actId, userId, participant);
+    @Resource
+    private ResourceManager resourceManager;
 
-        return 0;
+    @Override
+    public Prize draw(Integer actId, Long userId, @NonNull Participant participant) {
+        Integer jackpotId = determineJackpot(actId, userId, participant);
+        return doDrawOperation(jackpotId);
     }
 
     /**
@@ -24,5 +30,14 @@ public abstract class AbstractDrawManager implements DrawManager.DrawExecutor {
      * @return 用户抽奖所在奖池
      */
     public abstract Integer determineJackpot(Integer actId, Long userId, Participant participant);
+
+    /**
+     * 执行抽奖动作
+     * @param jackpotId 奖池Id
+     * @return 中奖奖品实体
+     */
+    private Prize doDrawOperation(Integer jackpotId) {
+        return resourceManager.findPrizeIds(jackpotId).get(resourceManager.findAliasSampler(jackpotId).sample());
+    }
 
 }

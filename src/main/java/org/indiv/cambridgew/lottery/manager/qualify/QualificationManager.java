@@ -3,16 +3,21 @@ package org.indiv.cambridgew.lottery.manager.qualify;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import org.indiv.cambridgew.lottery.common.RecordQualificationOperationEnum;
 import org.indiv.cambridgew.lottery.dao.ParticipantMapper;
+import org.indiv.cambridgew.lottery.dao.RecordQualificationMapper;
 import org.indiv.cambridgew.lottery.entity.Participant;
 import org.indiv.cambridgew.lottery.entity.Qualification;
+import org.indiv.cambridgew.lottery.entity.RecordQualification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Nullable;
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import static org.indiv.cambridgew.lottery.constant.ErrorMsgConstants.EVENT_KEY_NOT_EXIST;
 import static org.springframework.util.Assert.isTrue;
@@ -30,6 +35,8 @@ public class QualificationManager {
 
     @Resource
     private ParticipantMapper participantMapper;
+    @Resource
+    private RecordQualificationMapper recordQualificationMapper;
     @Resource
     private Map<String, Validator> qualificationStrategy = new HashMap<>(16);
 
@@ -75,6 +82,57 @@ public class QualificationManager {
                 .eq(null != qualificationId, Participant::getQualificationId, qualificationId)
                 .orderByAsc(Participant::getPriority);
         return participantMapper.selectList(query);
+    }
+
+    // =======================流水记录相关方法====================
+
+    /**
+     * 记录资格下发流水
+     *
+     * @param qualification 资格详情实体
+     * @param userId        用户Id
+     * @param source        资格来源
+     */
+    public void recordQualify(Qualification qualification, Long userId, String source) {
+        recordQualificationMapper.insert(RecordQualification.builder()
+                .qualificationId(qualification.getId())
+                .userId(userId)
+                .chanceNumber(qualification.getChanceNumber())
+                .source(source)
+                .operation(RecordQualificationOperationEnum.QUALIFY)
+                .actId(qualification.getActId())
+                .eventKey(qualification.getEventKey()).build());
+    }
+
+    /**
+     * 更新用户资格数据(participant资格)
+     *
+     * @param qualification 资格详情实体
+     * @param userId        用户Id
+     */
+    @Transactional(rollbackFor = Exception.class)
+    public void updateParticipant(Qualification qualification, Long userId) {
+        LambdaQueryWrapper<Participant> participantQuery = new LambdaQueryWrapper<>();
+        participantQuery.eq(Participant::getActId, qualification.getActId())
+                .eq(Participant::getQualificationId, qualification.getId())
+                .eq(Participant::getUserId, userId);
+        Participant p = participantMapper.selectOne(participantQuery);
+        if (Optional.ofNullable(p).isPresent()) {
+            // 已存在相同资格, 更新数据
+            LambdaUpdateWrapper<Participant> participantUpdate = new LambdaUpdateWrapper<>();
+            participantUpdate.set(Participant::getTotalChanceNumber, p.getTotalChanceNumber() + qualification.getChanceNumber())
+                    .set(Participant::getCurrentChanceNumber, p.getCurrentChanceNumber() + qualification.getChanceNumber());
+            participantMapper.update(null, participantUpdate);
+        } else {
+            // 不存在资格, 新增数据
+            participantMapper.insert(Participant.builder()
+                    .qualificationId(qualification.getId())
+                    .userId(userId)
+                    .currentChanceNumber(qualification.getChanceNumber())
+                    .totalChanceNumber(qualification.getChanceNumber())
+                    .actId(qualification.getActId())
+                    .priority(qualification.getPriority()).build());
+        }
     }
 
 

@@ -75,7 +75,6 @@ CREATE TABLE `tb_record_lottery` (
   `jackpot_id` int(11) NOT NULL COMMENT '奖池Id',
   `prize_id` int(11) NOT NULL COMMENT '奖品Id',
   `act_id` int(11) NOT NULL COMMENT '活动Id-冗余字段',
-  `event_key` varchar(64) NOT NULL COMMENT '资格事件名称-冗余字段',
   `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `deleted` tinyint(4) NOT NULL DEFAULT '0',

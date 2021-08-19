@@ -41,7 +41,6 @@ public abstract class AbstractManager implements QualificationManager.Validator 
                 .eq(Qualification::getEventKey, eventKey);
         Qualification qualification = qualificationMapper.selectOne(qualificationQuery);
         isTrue(null != qualification, EVENT_KEY_NOT_SUPPORTED_IN_ACTIVITY);
-
         qualification = doValidate(doTimeValidate(qualification), userId);
         checkLimit(qualification, userId);
         checkDependents(qualification, userId);

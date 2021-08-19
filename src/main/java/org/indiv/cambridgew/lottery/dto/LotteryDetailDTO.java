@@ -3,6 +3,9 @@ package org.indiv.cambridgew.lottery.dto;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.indiv.cambridgew.lottery.entity.Prize;
+import org.springframework.beans.BeanUtils;
 
 /**
  * 中奖信息详情
@@ -12,13 +15,14 @@ import lombok.Data;
  */
 @Data
 @ApiModel(value = "中奖信息详情")
-public class PrizeDetailDTO {
+@NoArgsConstructor
+public class LotteryDetailDTO {
 
     @ApiModelProperty(value = "活动Id")
     private Integer actId;
 
     @ApiModelProperty(value = "用户Id")
-    private Integer userId;
+    private Long userId;
 
     @ApiModelProperty(value = "奖品Id")
     private Integer prizeId;
@@ -31,5 +35,18 @@ public class PrizeDetailDTO {
 
     @ApiModelProperty(value = "是否是头奖")
     private Boolean firstPrize;
+
+    /**
+     * 构造中奖详细信息
+     *
+     * @param userId 用户Id
+     * @param prize  奖品实体
+     */
+    public LotteryDetailDTO(Long userId, Prize prize) {
+        BeanUtils.copyProperties(prize, this);
+        this.actId = prize.getActId();
+        this.userId = userId;
+        this.prizeId = prize.getId();
+    }
 
 }

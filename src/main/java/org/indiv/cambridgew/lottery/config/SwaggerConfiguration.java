@@ -18,7 +18,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig {
+public class SwaggerConfiguration {
 
     @Bean
     public Docket createRestApi() {
@@ -28,7 +28,7 @@ public class SwaggerConfig {
                 .paths(PathSelectors.any()).build()
                 .apiInfo(new ApiInfoBuilder()
                         .title("operation-lottery")
-                        .version(SwaggerConfig.class.getPackage().getImplementationVersion())
+                        .version(SwaggerConfiguration.class.getPackage().getImplementationVersion())
                         .description("运营抽奖系统")
                         .build());
     }

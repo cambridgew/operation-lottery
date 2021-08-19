@@ -39,4 +39,9 @@ public class ErrorMsgConstants {
 
     public static final String DRAW_OPERATION_NOT_EXIST = "抽奖方式不存在";
 
+
+    public static final String JACKPOT_NOT_EXIST = "奖池不存在";
+
+    public static final String ALIAS_SAMPLER_NOT_EXIST = "抽样器不存在";
+
 }
