@@ -2,8 +2,8 @@ package org.indiv.cambridgew.lottery.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
-import org.indiv.cambridgew.lottery.common.BaseEntity;
 import org.indiv.cambridgew.lottery.common.RecordQualificationOperationEnum;
+import org.indiv.cambridgew.poseidon.core.entity.BaseEntity;
 
 /**
  * 资格流水记录

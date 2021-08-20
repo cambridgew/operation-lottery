@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.indiv.cambridgew.lottery.common.BaseEntity;
+import org.indiv.cambridgew.poseidon.core.entity.BaseEntity;
 
 /**
  * 奖池索引信息, 标识触发某资格事件时, 在某抽奖次数区间内所抽奖的奖池

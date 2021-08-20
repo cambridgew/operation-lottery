@@ -2,7 +2,7 @@ package org.indiv.cambridgew.lottery.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
-import org.indiv.cambridgew.lottery.common.BaseEntity;
+import org.indiv.cambridgew.poseidon.core.entity.BaseEntity;
 
 /**
  * 活动参与者资格(设计上实际为qualification和用户的关联关系表, 由于用户信息无需做冗余记录, 故合并为同一张表)

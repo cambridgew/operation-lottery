@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.indiv.cambridgew.lottery.common.BaseEntity;
+import org.indiv.cambridgew.poseidon.core.entity.BaseEntity;
 
 import java.time.LocalDateTime;
 

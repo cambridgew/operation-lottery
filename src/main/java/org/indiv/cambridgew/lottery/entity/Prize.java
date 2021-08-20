@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.indiv.cambridgew.lottery.common.BaseEntity;
+import org.indiv.cambridgew.poseidon.core.entity.BaseEntity;
 
 /**
  * 奖品信息-对应到某个活动中的奖品信息

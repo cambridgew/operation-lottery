@@ -32,7 +32,6 @@
     </dependencyManagement>
 
     <dependencies>
-
         <dependency>
             <groupId>org.indiv.cambridgew</groupId>
             <artifactId>poseidon</artifactId>
