@@ -10,7 +10,6 @@ import org.indiv.cambridgew.operation.lottery.manager.draw.DrawManager;
 import org.indiv.cambridgew.operation.lottery.manager.qualify.QualificationManager;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 
@@ -32,7 +31,7 @@ public class LotteryService {
     private DrawManager drawManager;
     @Resource
     private ResourceManager resourceManager;
-    @Resource
+    @Resource(name = "taskExecutor")
     private ThreadPoolTaskExecutor taskExecutor;
 
     /**
@@ -41,7 +40,6 @@ public class LotteryService {
      * @param dto 抽奖请求dto
      * @return 中奖详情
      */
-    @Transactional(rollbackFor = Exception.class)
     public LotteryDetailDTO draw(DrawDTO dto) {
         // 尝试资格消耗
         Participant qualificationToConsume = drawManager.determineParticipant(dto.getActId(), dto.getUserId());
@@ -50,10 +48,10 @@ public class LotteryService {
         Prize prize = drawManager.draw(dto.getActId(), activity.getDrawOperationType(), dto.getUserId(), qualificationToConsume);
         // 抽奖完毕消耗抽奖资格
         isTrue(qualificationManager.consumeParticipant(qualificationToConsume, 1), QUALIFICATION_CONSUME_FAILURE);
-        // 中奖结果落库 TODO 待异步实现
-        drawManager.recordLottery(qualificationToConsume.getQualificationId(), dto.getUserId(), prize);
+        // 中奖结果异步落库
+        taskExecutor.getThreadPoolExecutor()
+                .execute(() -> drawManager.recordLottery(qualificationToConsume.getQualificationId(), dto.getUserId(), prize));
         return new LotteryDetailDTO(dto.getUserId(), prize);
     }
-
 
 }

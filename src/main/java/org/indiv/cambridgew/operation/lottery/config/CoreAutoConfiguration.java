@@ -18,7 +18,7 @@ public class CoreAutoConfiguration {
     @Configuration
     @ConditionalOnClass(BaseMapper.class)
     @PropertySource("classpath:/core-dao.properties")
-    @MapperScan("org.indiv.cambridgew.lottery.dao")
+    @MapperScan("org.indiv.cambridgew.operation.lottery.dao")
     public static class CoreDaoConfiguration {
 
     }
