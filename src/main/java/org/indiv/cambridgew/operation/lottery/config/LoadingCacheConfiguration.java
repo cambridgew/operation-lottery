@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.NonNull;
 
 import javax.annotation.Resource;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
@@ -43,7 +44,7 @@ public class LoadingCacheConfiguration {
                 .initialCapacity(16)
                 .build(new CacheLoader<Integer, Activity>() {
                     @Override
-                    public Activity load(Integer key) {
+                    public Activity load(@NotNull Integer key) {
                         return activityMapper.selectById(key);
                     }
                 });

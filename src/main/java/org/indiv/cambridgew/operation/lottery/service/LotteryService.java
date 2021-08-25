@@ -12,6 +12,8 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.concurrent.locks.ReentrantLock;
 
 import static org.indiv.cambridgew.operation.lottery.constant.ErrorMsgConstants.QUALIFICATION_CONSUME_FAILURE;
 import static org.springframework.util.Assert.isTrue;
@@ -24,6 +26,8 @@ import static org.springframework.util.Assert.isTrue;
  */
 @Service
 public class LotteryService {
+
+    private static final ReentrantLock lock = new ReentrantLock();
 
     @Resource
     private QualificationManager qualificationManager;
@@ -41,6 +45,7 @@ public class LotteryService {
      * @return 中奖详情
      */
     public LotteryDetailDTO draw(DrawDTO dto) {
+        lock.lock();
         // 尝试资格消耗
         Participant qualificationToConsume = drawManager.determineParticipant(dto.getActId(), dto.getUserId());
         // 存在抽奖资格, 开始抽奖
@@ -48,10 +53,23 @@ public class LotteryService {
         Prize prize = drawManager.draw(dto.getActId(), activity.getDrawOperationType(), dto.getUserId(), qualificationToConsume);
         // 抽奖完毕消耗抽奖资格
         isTrue(qualificationManager.consumeParticipant(qualificationToConsume, 1), QUALIFICATION_CONSUME_FAILURE);
+        lock.unlock();
+
         // 中奖结果异步落库
         taskExecutor.getThreadPoolExecutor()
                 .execute(() -> drawManager.recordLottery(qualificationToConsume.getQualificationId(), dto.getUserId(), prize));
         return new LotteryDetailDTO(dto.getUserId(), prize);
+    }
+
+    /**
+     * 查询中奖详情信息
+     *
+     * @param dto 请求dto
+     * @return 中奖详情
+     */
+    public LotteryDetailDTO getLotteryDetail(DrawDTO dto) {
+        List<Prize> prizeList = drawManager.getRecordLottery(dto.getActId(), dto.getUserId());
+        return new LotteryDetailDTO(dto.getUserId(), prizeList);
     }
 
 }

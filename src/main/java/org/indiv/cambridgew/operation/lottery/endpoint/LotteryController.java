@@ -3,6 +3,7 @@ package org.indiv.cambridgew.operation.lottery.endpoint;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.indiv.cambridgew.operation.lottery.dto.LotteryDetailDTO;
 import org.indiv.cambridgew.operation.lottery.dto.req.DrawDTO;
 import org.indiv.cambridgew.operation.lottery.service.LotteryService;
 import org.indiv.cambridgew.poseidon.core.entity.Result;
@@ -29,9 +30,14 @@ public class LotteryController {
 
     @ApiOperation("抽奖")
     @PostMapping(value = "/draw", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public Result qualify(@RequestBody DrawDTO dto) {
-        lotteryService.draw(dto);
-        return Result.success();
+    public Result<LotteryDetailDTO> qualify(@RequestBody DrawDTO dto) {
+        return Result.success(lotteryService.draw(dto));
+    }
+
+    @ApiOperation("查询用户中奖信息")
+    @PostMapping(value = "/getLotteryDetail", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    public Result<LotteryDetailDTO> getLotteryDetail(@RequestBody DrawDTO dto) {
+        return Result.success(lotteryService.getLotteryDetail(dto));
     }
 
 }

@@ -2,6 +2,7 @@ package org.indiv.cambridgew.operation.lottery.manager.draw;
 
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import org.indiv.cambridgew.operation.lottery.dao.ParticipantMapper;
+import org.indiv.cambridgew.operation.lottery.dao.PrizeMapper;
 import org.indiv.cambridgew.operation.lottery.dao.RecordLotteryMapper;
 import org.indiv.cambridgew.operation.lottery.entity.Participant;
 import org.indiv.cambridgew.operation.lottery.entity.Prize;
@@ -14,6 +15,7 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import static org.indiv.cambridgew.operation.lottery.constant.ErrorMsgConstants.*;
 import static org.springframework.util.Assert.isTrue;
@@ -33,6 +35,8 @@ public class DrawManager {
     private ParticipantMapper participantMapper;
     @Resource
     private RecordLotteryMapper recordLotteryMapper;
+    @Resource
+    private PrizeMapper prizeMapper;
     @Resource
     private Map<String, DrawExecutor> drawStrategy = new HashMap<>(16);
 
@@ -83,6 +87,22 @@ public class DrawManager {
                 .jackpotId(prize.getJackpotId())
                 .prizeId(prize.getId())
                 .actId(prize.getActId()).build());
+    }
+
+    /**
+     * 查询抽奖结果
+     *
+     * @param actId  活动Id
+     * @param userId 用户Id
+     */
+    public List<Prize> getRecordLottery(Integer actId, Long userId) {
+        return recordLotteryMapper.selectList(Wrappers.<RecordLottery>lambdaQuery()
+                .eq(RecordLottery::getActId, actId)
+                .eq(RecordLottery::getUserId, userId)
+                .orderByDesc(RecordLottery::getUpdateTime))
+                .stream()
+                .map(r -> prizeMapper.selectById(r.getPrizeId()))
+                .collect(Collectors.toList());
     }
 
 

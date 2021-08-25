@@ -22,7 +22,7 @@ public class Prize extends BaseEntity {
     private Integer jackpotId;
 
     // 商品Id(可能是虚拟物或实体物, 可充当奖品)
-    private Integer itemId;
+    private Long itemId;
 
     // 中奖概率
     private Double probability;
